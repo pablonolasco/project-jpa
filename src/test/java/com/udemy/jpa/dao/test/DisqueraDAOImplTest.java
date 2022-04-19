@@ -92,6 +92,13 @@ class DisqueraDAOImplTest {
 		
 		
 	}
+	
+	@Test
+	void testBuscarDisqueraByDescripcionSQLNative() {
+		Disquera disquera=this.disqueraDAO.consultarByDescripcionNative("MegaForce");
+		assertNotNull(disquera);
+		System.out.print(disquera.getDescripcion());
+	}
 
 
 }
