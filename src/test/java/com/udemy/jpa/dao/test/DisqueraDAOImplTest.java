@@ -74,6 +74,20 @@ class DisqueraDAOImplTest {
 	void testBuscarDisquera() {
 		
 		Disquera disquera=this.disqueraDAO.buscarDisquera(1L);
+		assertNotNull(disquera);
+		System.out.println(disquera.getDescripcion());
+		
+		
+	}
+	
+	/**
+	 * Test method for {@link com.udemy.jpa.dao.impl.DisqueraDAOImpl#buscarDisquera(java.lang.Long)}.
+	 */
+	@Test
+	void testBuscarDisqueraByDescripcionJPQL() {
+		
+		Disquera disquera=this.disqueraDAO.consultarByDescripcionJPQL("MegaForce");
+		assertNotNull(disquera);
 		System.out.println(disquera.getDescripcion());
 		
 		

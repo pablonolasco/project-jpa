@@ -104,4 +104,12 @@ public class DisqueraDAOImpl implements DisqueraDAO {
 		return disqueraOptional;
 	}
 
+	@Override
+	public Disquera consultarByDescripcionJPQL(String descripcion) {
+		EntityManager em= DisqueraDAOImpl.ENTITY_MANAGER_FACTORY.createEntityManager();
+		TypedQuery<Disquera>queryDisquera=(TypedQuery<Disquera>) em.createQuery("FROM Disquera WHERE descripcion = :desc")
+					.setParameter("desc", descripcion);
+		return queryDisquera.getSingleResult();
+	}
+
 }
