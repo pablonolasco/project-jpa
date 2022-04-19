@@ -46,6 +46,13 @@ class SubGeneroDAOImplTest {
 		
 		this.subgenero.actualizarSubgenero(subgenero);
 	}
+	
+	@Test
+	void testEliminarSubgenero() {
+
+		this.subgenero.eliminarSubgenero(2L);
+		
+	}
 
 	@Test
 	void testConsultarSubgenero() {
