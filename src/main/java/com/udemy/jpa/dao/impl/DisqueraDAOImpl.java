@@ -8,6 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import com.udemy.jpa.dao.DisqueraDAO;
 import com.udemy.jpa.entities.Disquera;
@@ -84,8 +85,10 @@ public class DisqueraDAOImpl implements DisqueraDAO {
 
 	@Override
 	public List<Disquera> consultar() {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManager entityManager=DisqueraDAOImpl.ENTITY_MANAGER_FACTORY.createEntityManager();
+		// crea query con jpl entre entidades de jpa y no entre las tablas de la base de datos
+		TypedQuery<Disquera> queryDisquera= (TypedQuery<Disquera>) entityManager.createQuery("FROM Disquera ORDER BY descripcion");
+		return queryDisquera.getResultList();
 	}
 
 	@Override
