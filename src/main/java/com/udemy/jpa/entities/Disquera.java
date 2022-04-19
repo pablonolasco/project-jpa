@@ -24,6 +24,8 @@ public class Disquera {
 	private LocalDateTime fechaCreacion;
 
 	private LocalDateTime fechaModificacion;
+	
+	private Boolean estatus;
 
 	public Long getIdDisquera() {
 		return idDisquera;
@@ -56,6 +58,15 @@ public class Disquera {
 	public void setFechaModificacion(LocalDateTime fechaModificacion) {
 		this.fechaModificacion = fechaModificacion;
 	}
+
+	public Boolean getEstatus() {
+		return estatus;
+	}
+
+	public void setEstatus(Boolean estatus) {
+		this.estatus = estatus;
+	}
+	
 	
 	
 

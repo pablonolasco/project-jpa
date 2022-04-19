@@ -1,25 +1,26 @@
 <!-- archivo que carga las entidades en el contexto de persistencia de JPA -->
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2"
-	xsi:schemalocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-	
-	<!-- Configura las clases mapeadas y la conexion-->
-	<persistence-unit name="persistence">
-		<!-- Define la clase para Hibernate que implementa JPA -->
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<!-- Define las clases que serna mappeadas al configurarse la conexion 
-			a la base de datos -->
-		<class>com.udemy.jpa.entities.Disquera</class>
-		<properties>
-			<property name="javax.persistence.jdbc.driver"
-				value="com.mysql.cj.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/tienda_musical" />
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="" />
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect" />
-			
-		</properties>
-	</persistence-unit>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <!-- Define persistence unit -->
+    <persistence-unit name="persistenceJPA">
+    	
+    	<!-- Define la clase para Hibernate que implementa JPA. -->
+    	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    	
+    	<!-- Define las clases que seran mappeadas al configurarse la conexion a la base de datos. -->
+    	<class>com.devpredator.projectjpa.entity.Disquera</class>
+    	
+    	<properties>
+    		<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+    		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tienda_musical?serverTimezone=America/Mexico_City"/>
+    		<property name="javax.persistence.jdbc.user" value="root"/>
+    		<property name="javax.persistence.jdbc.password" value=""/>
+    	
+    		<property name="hibernate.show_sql" value="true"/>
+    		<property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
+    	</properties>
+    	
+    </persistence-unit>
+    
 </persistence>
