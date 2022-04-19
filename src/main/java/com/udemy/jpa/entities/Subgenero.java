@@ -12,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 @Table(name = "subgenero")
 public class Subgenero {
@@ -26,6 +29,11 @@ public class Subgenero {
 	// cuando se especifica el tipo de consulta se coloca automaticamente como eager
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idGenero", referencedColumnName = "idGenero")
+	@Cascade(CascadeType.PERSIST)
+	// PERSIST obliga a que cuando solo se haga un INSERT de un subgenero solicitara un guardado de genero 
+	// MERGE obliga a que todas las transaciones UPDATE que se hagan afecten a la tabla genero tambien
+	// REMOVE obliga a que todas las transaciones DELETE que se hagan afecten a la tabla genero tambien
+	// ALL obliga a que todas las transaciones INSERT UPDATE DELETE que se hagan afecten a la tabla genero tambien
 	private Genero genero;
 	
 	private LocalDateTime fechaCreacion;
