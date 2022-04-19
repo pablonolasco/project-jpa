@@ -15,6 +15,9 @@ import com.udemy.jpa.entities.Disquera;
 
 public class DisqueraDAOImpl implements DisqueraDAO {
 
+	// Es el responsable de ADMINISTRAR y mantener las entidades en la unidad de
+	// persistencia para realizar
+	// las transacciones a la base de datos.
 	private static final EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence
 			.createEntityManagerFactory("persistenceJPA");
 
