@@ -29,7 +29,7 @@ public class Subgenero {
 	// cuando se especifica el tipo de consulta se coloca automaticamente como eager
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idGenero", referencedColumnName = "idGenero")
-	@Cascade(CascadeType.PERSIST)
+	@Cascade(CascadeType.MERGE)
 	// PERSIST obliga a que cuando solo se haga un INSERT de un subgenero solicitara un guardado de genero 
 	// MERGE obliga a que todas las transaciones UPDATE que se hagan afecten a la tabla genero tambien
 	// REMOVE obliga a que todas las transaciones DELETE que se hagan afecten a la tabla genero tambien

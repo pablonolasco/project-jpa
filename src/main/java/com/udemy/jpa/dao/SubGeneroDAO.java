@@ -13,4 +13,6 @@ public interface SubGeneroDAO {
 	List<Subgenero>consultarSubgenero();
 	
 	Subgenero buscarByDescripcion(String descripcion);
+	
+	Subgenero buscarById(Long id);
 }

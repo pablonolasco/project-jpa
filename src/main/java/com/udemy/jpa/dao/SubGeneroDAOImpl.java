@@ -82,4 +82,13 @@ public class SubGeneroDAOImpl implements SubGeneroDAO {
 		}
 	}
 
+	@Override
+	public Subgenero buscarById(Long id) {
+		EntityManager em= SubGeneroDAOImpl.ENTITY_MANAGER_FACTORY.createEntityManager();
+		TypedQuery<Subgenero>querySubgenero=(TypedQuery<Subgenero>) 
+				em.createQuery("FROM Subgenero WHERE idSubgenero = :id")
+				.setParameter("id", id);
+		return querySubgenero.getSingleResult();
+	}
+
 }

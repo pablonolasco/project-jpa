@@ -36,7 +36,15 @@ class SubGeneroDAOImplTest {
 
 	@Test
 	void testActualizarSubgenero() {
-		fail("Not yet implemented");
+		Subgenero subgenero=this.subgenero.buscarById(2L);
+		
+		subgenero.setDescripcion("hard core nuevo");
+		subgenero.setFechaModificacion(LocalDateTime.now());
+		subgenero.setEstatus(true);
+		
+		subgenero.getGenero().setDescripcion("hard core");
+		
+		this.subgenero.actualizarSubgenero(subgenero);
 	}
 
 	@Test
@@ -52,7 +60,16 @@ class SubGeneroDAOImplTest {
 
 	@Test
 	void testBuscarByDescripcion() {
-		fail("Not yet implemented");
+		Subgenero subgenero=this.subgenero.buscarByDescripcion("rock nuevo");
+		assertNotNull(subgenero);
+		System.out.println(subgenero.getDescripcion());
+	}
+	
+	@Test
+	void testBuscarById() {
+		Subgenero subgenero=this.subgenero.buscarById(2L);
+		assertNotNull(subgenero);
+		System.out.println(subgenero.getDescripcion());
 	}
 
 }
